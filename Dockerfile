@@ -5,4 +5,4 @@ COPY package.json .
 RUN yarn
 COPY . .
 
-CMD ["yarn", "run", "start"]
+CMD ["yarn", "run", "dev:ssr"]
