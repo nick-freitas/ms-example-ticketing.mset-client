@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mset-client/web-shell": ["libs/web-shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

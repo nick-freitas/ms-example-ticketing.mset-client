@@ -184,6 +184,27 @@
           }
         }
       }
+    },
+    "web-shell": {
+      "root": "libs/web-shell",
+      "sourceRoot": "libs/web-shell/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web-shell/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web-shell"],
+          "options": {
+            "jestConfig": "libs/web-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
