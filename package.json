@@ -26,7 +26,7 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "dev:ssr": "ng run web:serve-ssr",
+    "dev:ssr": "ng run web:serve-ssr --port 3000",
     "serve:ssr": "node dist/web/server/main.js",
     "build:ssr": "ng build && ng run web:server",
     "prerender": "ng run web:prerender",
