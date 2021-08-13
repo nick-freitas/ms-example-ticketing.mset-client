@@ -1,6 +1,27 @@
 {
   "version": 1,
   "projects": {
+    "core-auth": {
+      "root": "libs/core/auth",
+      "sourceRoot": "libs/core/auth/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/auth/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/auth"],
+          "options": {
+            "jestConfig": "libs/core/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "features-home-page": {
       "root": "libs/features/home-page",
       "sourceRoot": "libs/features/home-page/src",

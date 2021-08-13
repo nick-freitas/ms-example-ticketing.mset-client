@@ -55,6 +55,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
     "express": "^4.15.2",
+    "jwt-decode": "^3.1.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

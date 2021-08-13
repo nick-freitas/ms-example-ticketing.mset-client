@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mset-client/core-auth": ["libs/core/auth/src/index.ts"],
       "@mset-client/features/home-page": [
         "libs/features/home-page/src/index.ts"
       ],
