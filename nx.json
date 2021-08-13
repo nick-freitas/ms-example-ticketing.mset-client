@@ -28,6 +28,21 @@
     ]
   },
   "projects": {
+    "features-home-page": {
+      "tags": []
+    },
+    "features-page-not-found": {
+      "tags": []
+    },
+    "features-sign-up": {
+      "tags": []
+    },
+    "header-layout": {
+      "tags": []
+    },
+    "material-ui": {
+      "tags": []
+    },
     "web": {
       "tags": []
     },

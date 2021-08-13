@@ -1,6 +1,111 @@
 {
   "version": 1,
   "projects": {
+    "features-home-page": {
+      "root": "libs/features/home-page",
+      "sourceRoot": "libs/features/home-page/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/features/home-page/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/home-page"],
+          "options": {
+            "jestConfig": "libs/features/home-page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "features-page-not-found": {
+      "root": "libs/features/page-not-found",
+      "sourceRoot": "libs/features/page-not-found/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/features/page-not-found/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/page-not-found"],
+          "options": {
+            "jestConfig": "libs/features/page-not-found/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "features-sign-up": {
+      "root": "libs/features/sign-up",
+      "sourceRoot": "libs/features/sign-up/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/features/sign-up/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/sign-up"],
+          "options": {
+            "jestConfig": "libs/features/sign-up/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "header-layout": {
+      "root": "libs/header-layout",
+      "sourceRoot": "libs/header-layout/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/header-layout/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/header-layout"],
+          "options": {
+            "jestConfig": "libs/header-layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "material-ui": {
+      "root": "libs/material-ui",
+      "sourceRoot": "libs/material-ui/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/material-ui/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/material-ui"],
+          "options": {
+            "jestConfig": "libs/material-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "web": {
       "projectType": "application",
       "root": "apps/web",
@@ -18,7 +123,10 @@
             "tsConfig": "apps/web/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
-            "styles": ["apps/web/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/web/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -56,6 +164,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 4200,
+            "proxyConfig": "apps/web/src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "web:build:production"
@@ -135,7 +247,8 @@
               "serverTarget": "web:server:production"
             },
             "options": {
-              "port": 3000
+              "port": 3000,
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

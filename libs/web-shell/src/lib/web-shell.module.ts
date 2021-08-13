@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { WebShellRoutingModule } from './web-shell-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    WebShellRoutingModule
-  ]
+  imports: [BrowserModule, HttpClientModule, WebShellRoutingModule],
+  exports: [WebShellRoutingModule],
 })
-export class WebShellModule { }
+export class WebShellModule {}

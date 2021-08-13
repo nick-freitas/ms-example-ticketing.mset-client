@@ -1,0 +1,29 @@
+<div class="container">
+  <span class="mat-h1" fxLayout="row" fxLayoutAlign="center center"
+    >MS Example Ticketing</span
+  >
+  <mat-card>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <mat-card-title>Sign Up</mat-card-title>
+      <mat-card-content fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Email"
+            type="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button type="submit">Sign Up</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

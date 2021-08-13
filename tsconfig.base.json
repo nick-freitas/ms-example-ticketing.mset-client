@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mset-client/features/home-page": [
+        "libs/features/home-page/src/index.ts"
+      ],
+      "@mset-client/features/page-not-found": [
+        "libs/features/page-not-found/src/index.ts"
+      ],
+      "@mset-client/features/sign-up": ["libs/features/sign-up/src/index.ts"],
+      "@mset-client/header-layout": ["libs/header-layout/src/index.ts"],
+      "@mset-client/material-ui": ["libs/material-ui/src/index.ts"],
       "@mset-client/web-shell": ["libs/web-shell/src/index.ts"]
     }
   },
