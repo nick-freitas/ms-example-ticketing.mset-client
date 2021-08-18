@@ -1,6 +1,7 @@
 import jwt_decode from 'jwt-decode';
 import { Injectable } from '@angular/core';
 import { CookieService } from './cookie.service';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +9,13 @@ import { CookieService } from './cookie.service';
 export class JWTTokenService {
   jwtToken: string | undefined;
   decodedToken: { [key: string]: string } | undefined;
+  userToken$: Observable<any>;
+  userTokenSubject: BehaviorSubject<any>;
 
   constructor(private cookieService: CookieService) {
     this.setToken();
+    this.userTokenSubject = new BehaviorSubject(null);
+    this.userToken$ = this.userTokenSubject.asObservable();
   }
 
   setToken() {
@@ -30,7 +35,6 @@ export class JWTTokenService {
   }
 
   getUser() {
-    console.log('gu');
     this.decodeToken();
     return this.decodedToken ? this.decodedToken : null;
   }

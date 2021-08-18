@@ -3,17 +3,17 @@
     >MS Example Ticketing</span
   >
   <mat-card>
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-      <mat-card-title>Sign Up</mat-card-title>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <mat-card-title>Sign In</mat-card-title>
       <mat-card-content fxLayout="column">
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <Input matInput placeholder="Email" formControlName="email" />
+          <input matInput placeholder="Email" formControlName="email" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <Input
+          <input
             matInput
             placeholder="Password"
             type="password"
@@ -26,13 +26,13 @@
           <button
             mat-button
             type="submit"
-            [disabled]="!this.signUpForm.enabled"
+            [disabled]="!this.signInForm.enabled"
           >
-            Sign Up
+            Sign In
           </button>
-          <a routerLink="/sign-in">Sign in instead</a>
+          <a routerLink="/sign-up">Sign up instead</a>
         </div>
-        <span *ngIf="!this.signUpForm.enabled">Trying to sign Up...</span>
+        <span *ngIf="!this.signInForm.enabled">Trying to sign in...</span>
       </mat-card-actions>
     </form>
   </mat-card>

@@ -12,7 +12,15 @@
   </button> -->
   <span>MS Example - Ticketing</span>
   <div>
-    <a mat-raised-button [routerLink]="['/sign-up']">Sign Up</a>
+    <div *ngIf="(this.tokenService.userToken$ | async)?.userId; else loggedIn">
+      <a mat-raised-button (click)="signOut()">Sign Out</a>
+    </div>
+    <ng-template #loggedIn>
+      <div>
+        <a mat-button [routerLink]="['/sign-in']">Sign In</a>
+        <a mat-raised-button [routerLink]="['/sign-up']">Sign Up</a>
+      </div>
+    </ng-template>
   </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

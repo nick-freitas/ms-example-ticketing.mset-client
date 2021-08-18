@@ -1,21 +1,21 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { SignUpService } from './sign-up.service';
+import { SignInService } from './sign-in.service';
 
 @Component({
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SignUpComponent {
-  signUpForm: FormGroup;
+export class SignInComponent {
+  signInForm: FormGroup;
 
   constructor(
-    private signUpService: SignUpService,
+    private signInService: SignInService,
     private _snackBar: MatSnackBar
   ) {
-    this.signUpForm = new FormGroup({
+    this.signInForm = new FormGroup({
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
@@ -24,7 +24,7 @@ export class SignUpComponent {
   onSubmit() {
     this._snackBar.dismiss();
 
-    const { email, password } = this.signUpForm.value;
+    const { email, password } = this.signInForm.value;
     if (!email) {
       return this._snackBar.open('Email is required', 'Close');
     }
@@ -33,15 +33,15 @@ export class SignUpComponent {
       return this._snackBar.open('Password is required', 'Close');
     }
 
-    this.signUpForm.disable();
+    this.signInForm.disable();
 
-    return this.signUpService.signUp(email, password).subscribe({
+    return this.signInService.signIn(email, password).subscribe({
       next: () => {
-        this.signUpForm.enable();
+        this.signInForm.enable();
       },
       error: (err) => {
         console.error(err);
-        this.signUpForm.enable();
+        this.signInForm.enable();
 
         switch (err?.error?.message) {
           case 'Invalid Email':

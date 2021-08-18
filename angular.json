@@ -64,6 +64,27 @@
         }
       }
     },
+    "features-sign-in": {
+      "root": "libs/features/sign-in",
+      "sourceRoot": "libs/features/sign-in/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/features/sign-in/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/features/sign-in"],
+          "options": {
+            "jestConfig": "libs/features/sign-in/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "features-sign-up": {
       "root": "libs/features/sign-up",
       "sourceRoot": "libs/features/sign-up/src",

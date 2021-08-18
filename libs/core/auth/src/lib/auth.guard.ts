@@ -8,6 +8,7 @@ import { JWTTokenService } from './jwt-token.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(private jwtService: JWTTokenService, private router: Router) {}
+
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     if (this.jwtService.getUser()) {
       if (this.jwtService.isTokenExpired()) {

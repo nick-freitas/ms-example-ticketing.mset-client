@@ -22,6 +22,7 @@
       "@mset-client/features/page-not-found": [
         "libs/features/page-not-found/src/index.ts"
       ],
+      "@mset-client/features/sign-in": ["libs/features/sign-in/src/index.ts"],
       "@mset-client/features/sign-up": ["libs/features/sign-up/src/index.ts"],
       "@mset-client/header-layout": ["libs/header-layout/src/index.ts"],
       "@mset-client/material-ui": ["libs/material-ui/src/index.ts"],

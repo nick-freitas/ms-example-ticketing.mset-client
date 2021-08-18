@@ -12,6 +12,11 @@ const routes: Routes = [
       import('@mset-client/features/sign-up').then((m) => m.SignUpModule),
   },
   {
+    path: 'sign-in',
+    loadChildren: () =>
+      import('@mset-client/features/sign-in').then((m) => m.SignInModule),
+  },
+  {
     path: '',
     component: HeaderLayoutComponent,
     children: [
